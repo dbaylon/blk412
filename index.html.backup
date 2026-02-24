@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLK 412 Coffee & Tea - Artisan Coffee, Tea & Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coffee-dark: #2C1810;
+            --coffee-medium: #5D4037;
+            --coffee-light: #8D6E63;
+            --cream: #F5E6D3;
+            --accent-gold: #D4A574;
+            --accent-rust: #C97850;
+            --bg-warm: #FFF8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-warm);
+            color: var(--coffee-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif;
+            letter-spacing: -0.03em;
+            font-weight: 700;
+        }
+
+        /* Grain texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            z-index: 1;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--coffee-medium);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--coffee-dark);
+        }
+
+        /* Layered shadows */
+        .shadow-layered {
+            box-shadow: 
+                0 2px 4px rgba(44, 24, 16, 0.08),
+                0 8px 16px rgba(44, 24, 16, 0.12),
+                0 16px 32px rgba(44, 24, 16, 0.08);
+        }
+
+        .shadow-elevated {
+            box-shadow: 
+                0 4px 8px rgba(44, 24, 16, 0.1),
+                0 12px 24px rgba(44, 24, 16, 0.15),
+                0 24px 48px rgba(44, 24, 16, 0.1);
+        }
+
+        /* Gradient backgrounds */
+        .gradient-warm {
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 165, 116, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(201, 120, 80, 0.1) 0%, transparent 50%),
+                var(--bg-warm);
+        }
+
+        .gradient-dark {
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(212, 165, 116, 0.2) 0%, transparent 60%),
+                linear-gradient(135deg, var(--coffee-dark) 0%, var(--coffee-medium) 100%);
+        }
+
+        /* Animation utilities */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-scaleIn {
+            animation: scaleIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 2px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                        opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--coffee-dark);
+            color: var(--cream);
+            box-shadow: 
+                0 4px 12px rgba(44, 24, 16, 0.3),
+                0 8px 24px rgba(44, 24, 16, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 6px 16px rgba(44, 24, 16, 0.35),
+                0 12px 32px rgba(44, 24, 16, 0.25);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--coffee-dark);
+            border: 2px solid var(--coffee-dark);
+        }
+
+        .btn-secondary:hover {
+            background: var(--coffee-dark);
+            color: var(--cream);
+            transform: translateY(-2px);
+        }
+
+        /* Card hover effects */
+        .card {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 8px 16px rgba(44, 24, 16, 0.12),
+                0 16px 32px rgba(44, 24, 16, 0.15),
+                0 32px 64px rgba(44, 24, 16, 0.1);
+        }
+
+        /* Navigation */
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+            color: var(--coffee-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 1rem;
+            right: 1rem;
+            height: 2px;
+            background: var(--accent-gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-link:hover::after,
+        .nav-link:focus-visible::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-link:focus-visible {
+            outline: 2px solid var(--accent-gold);
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        /* Hero image overlay */
+        .hero-overlay {
+            background: linear-gradient(
+                135deg,
+                rgba(44, 24, 16, 0.85) 0%,
+                rgba(93, 64, 55, 0.75) 50%,
+                rgba(44, 24, 16, 0.9) 100%
+            );
+        }
+
+        /* Feature icons */
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-rust));
+            box-shadow: 0 8px 16px rgba(212, 165, 116, 0.3);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .feature-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Image gradient overlay */
+        .img-overlay {
+            position: relative;
+        }
+
+        .img-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(44, 24, 16, 0.7) 0%,
+                rgba(44, 24, 16, 0.3) 50%,
+                transparent 100%
+            );
+            pointer-events: none;
+        }
+
+        /* Menu tabs */
+        .menu-tab {
+            padding: 0.75rem 2rem;
+            border: none;
+            background: transparent;
+            color: var(--coffee-medium);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .menu-tab::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent-gold);
+            transform: scaleX(0);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .menu-tab.active {
+            color: var(--coffee-dark);
+        }
+
+        .menu-tab.active::after {
+            transform: scaleX(1);
+        }
+
+        .menu-tab:hover {
+            color: var(--coffee-dark);
+        }
+
+        /* Responsive utilities */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .btn {
+                padding: 0.875rem 2rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Focus-visible for accessibility */
+        *:focus-visible {
+            outline: 2px solid var(--accent-gold);
+            outline-offset: 4px;
+        }
+
+        /* Hide elements for animation */
+        .animate-fadeInUp,
+        .animate-fadeIn,
+        .animate-scaleIn {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-layered">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="logo.svg" alt="BLK 412 Coffee & Tea Logo" class="h-12 w-auto">
+                <div class="flex flex-col leading-none">
+                    <span class="text-2xl font-bold" style="font-family: 'Playfair Display', serif; letter-spacing: -0.02em; color: var(--coffee-dark);">BLK 412</span>
+                    <span class="text-xs uppercase tracking-widest" style="font-family: 'Outfit', sans-serif; font-weight: 500; color: var(--accent-gold); letter-spacing: 0.15em;">Coffee & Tea</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-1">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#location" class="nav-link">Location</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <a href="#contact" class="btn btn-primary">Order Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20">
+        <div class="absolute inset-0 img-overlay">
+            <img src="https://placehold.co/1920x1080/8D6E63/2C1810?text=Artisan+Coffee+Experience" 
+                 alt="Artisan coffee being expertly prepared" 
+                 class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <h1 class="text-6xl md:text-7xl lg:text-8xl text-white mb-6 animate-fadeInUp" style="line-height: 1.1;">
+                Where Craft<br>Meets Community
+            </h1>
+            <p class="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto animate-fadeInUp delay-200" style="font-weight: 300;">
+                Experience artisan coffee & premium tea roasted in-house, paired with handcrafted pastries in the heart of the city
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fadeInUp delay-400">
+                <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                <a href="#about" class="btn btn-secondary" style="color: white; border-color: white;">Our Story</a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-fadeIn delay-600">
+            <div class="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
+                <div class="w-1 h-3 bg-white/70 rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-24 gradient-warm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center animate-scaleIn delay-100">
+                    <div class="feature-icon mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Roasted & Sourced In-House</h3>
+                    <p class="text-lg" style="color: var(--coffee-medium);">
+                        Single-origin coffee beans and premium tea leaves sourced and roasted fresh daily in small batches
+                    </p>
+                </div>
+
+                <div class="text-center animate-scaleIn delay-300">
+                    <div class="feature-icon mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Community Hub</h3>
+                    <p class="text-lg" style="color: var(--coffee-medium);">
+                        A welcoming space for connection, creativity, and meaningful conversation
+                    </p>
+                </div>
+
+                <div class="text-center animate-scaleIn delay-500">
+                    <div class="feature-icon mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Open Early & Late</h3>
+                    <p class="text-lg" style="color: var(--coffee-medium);">
+                        6am to 8pm daily - from your morning brew to evening wind-down
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-fadeInUp">
+                    <div class="img-overlay rounded-sm overflow-hidden shadow-elevated">
+                        <img src="https://placehold.co/800x1000/8D6E63/2C1810?text=Coffee+Interior" 
+                             alt="Warm and inviting coffee shop interior" 
+                             class="w-full h-auto">
+                    </div>
+                </div>
+
+                <div class="animate-fadeInUp delay-200">
+                    <h2 class="text-5xl md:text-6xl mb-6" style="line-height: 1.1;">
+                        Crafted with<br>Purpose & Passion
+                    </h2>
+                    <div class="space-y-6 text-lg" style="color: var(--coffee-medium);">
+                        <p>
+                            BLK 412 was born from a simple belief: coffee and tea are more than beverages—they're rituals, 
+                            moments of pause, and catalysts for connection.
+                        </p>
+                        <p>
+                            Since 2019, we've been sourcing the finest single-origin coffee beans and premium tea leaves from sustainable farms, 
+                            roasting and preparing them in small batches, and serving them alongside handcrafted pastries made 
+                            fresh each morning.
+                        </p>
+                        <p>
+                            Our baristas are trained in the art of espresso extraction, pour-over technique, 
+                            and latte art. Every cup is crafted with intention and care.
+                        </p>
+                        <p style="color: var(--coffee-dark); font-weight: 500;">
+                            This is more than a coffee shop—it's a gathering place where creativity flows 
+                            and community thrives.
+                        </p>
+                    </div>
+                    <a href="#menu" class="btn btn-primary mt-8">Discover Our Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 gradient-warm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl mb-6">Signature Menu</h2>
+                <p class="text-xl max-w-2xl mx-auto" style="color: var(--coffee-medium);">
+                    Thoughtfully curated beverages and bites, crafted to perfection
+                </p>
+            </div>
+
+            <div class="flex justify-center mb-12 border-b-2 border-gray-200">
+                <button class="menu-tab active" onclick="showMenu('espresso')">Espresso</button>
+                <button class="menu-tab" onclick="showMenu('tea')">Tea</button>
+                <button class="menu-tab" onclick="showMenu('brewed')">Brewed</button>
+                <button class="menu-tab" onclick="showMenu('seasonal')">Seasonal</button>
+                <button class="menu-tab" onclick="showMenu('food')">Food</button>
+            </div>
+
+            <!-- Espresso Menu -->
+            <div id="menu-espresso" class="menu-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="img-overlay rounded-sm overflow-hidden mb-6">
+                        <img src="https://placehold.co/400x300/8D6E63/2C1810?text=Espresso" 
+                             alt="Classic espresso shot" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Classic Espresso</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Double shot, rich and balanced with notes of dark chocolate
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$3.50</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="img-overlay rounded-sm overflow-hidden mb-6">
+                        <img src="https://placehold.co/400x300/8D6E63/2C1810?text=Cappuccino" 
+                             alt="Cappuccino with latte art" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Cappuccino</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Velvety microfoam meets espresso in perfect harmony
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.50</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="img-overlay rounded-sm overflow-hidden mb-6">
+                        <img src="https://placehold.co/400x300/8D6E63/2C1810?text=Cortado" 
+                             alt="Cortado in glass" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Cortado</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Equal parts espresso and steamed milk, bold yet smooth
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.25</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="img-overlay rounded-sm overflow-hidden mb-6">
+                        <img src="https://placehold.co/400x300/8D6E63/2C1810?text=Flat+White" 
+                             alt="Flat white with latte art" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Flat White</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Ristretto shots with silky microfoam, Australian-style
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.75</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="img-overlay rounded-sm overflow-hidden mb-6">
+                        <img src="https://placehold.co/400x300/8D6E63/2C1810?text=Latte" 
+                             alt="Latte with beautiful art" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Signature Latte</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Creamy whole milk latte with intricate latte art
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$5.00</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="img-overlay rounded-sm overflow-hidden mb-6">
+                        <img src="https://placehold.co/400x300/8D6E63/2C1810?text=Macchiato" 
+                             alt="Macchiato with foam" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Macchiato</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Espresso "marked" with a dollop of foamed milk
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$3.75</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tea Menu -->
+            <div id="menu-tea" class="menu-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="img-overlay rounded-sm overflow-hidden mb-6">
+                        <img src="https://placehold.co/400x300/8D6E63/2C1810?text=Matcha" 
+                             alt="Premium matcha green tea" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Ceremonial Matcha</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Stone-ground Japanese matcha, whisked to perfection
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$5.50</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="img-overlay rounded-sm overflow-hidden mb-6">
+                        <img src="https://placehold.co/400x300/8D6E63/2C1810?text=Earl+Grey" 
+                             alt="London Fog Earl Grey" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">London Fog</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Earl Grey tea with vanilla, lavender, and steamed milk
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.75</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="img-overlay rounded-sm overflow-hidden mb-6">
+                        <img src="https://placehold.co/400x300/8D6E63/2C1810?text=Chai" 
+                             alt="Masala chai latte" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Masala Chai</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        House-blend spiced chai with creamy steamed milk
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.50</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="img-overlay rounded-sm overflow-hidden mb-6">
+                        <img src="https://placehold.co/400x300/8D6E63/2C1810?text=Oolong" 
+                             alt="Premium oolong tea" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Iron Goddess Oolong</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Premium Tie Guan Yin with floral and honey notes
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.25</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="img-overlay rounded-sm overflow-hidden mb-6">
+                        <img src="https://placehold.co/400x300/8D6E63/2C1810?text=Jasmine" 
+                             alt="Jasmine green tea" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Jasmine Pearl</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Hand-rolled green tea pearls scented with jasmine flowers
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.00</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="img-overlay rounded-sm overflow-hidden mb-6">
+                        <img src="https://placehold.co/400x300/8D6E63/2C1810?text=Herbal" 
+                             alt="Herbal tea blend" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Chamomile Dream</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Calming chamomile, lavender, and honey blend
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$3.75</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other menu sections (hidden by default) -->
+            <div id="menu-brewed" class="menu-content hidden">
+                <p class="text-center text-xl" style="color: var(--coffee-medium);">Brewed coffee menu coming soon...</p>
+            </div>
+            <div id="menu-seasonal" class="menu-content hidden">
+                <p class="text-center text-xl" style="color: var(--coffee-medium);">Seasonal specials menu coming soon...</p>
+            </div>
+            <div id="menu-food" class="menu-content hidden">
+                <p class="text-center text-xl" style="color: var(--coffee-medium);">Food menu coming soon...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl mb-6">The Experience</h2>
+                <p class="text-xl max-w-2xl mx-auto" style="color: var(--coffee-medium);">
+                    A glimpse into our daily rituals and community moments
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="img-overlay rounded-sm overflow-hidden shadow-layered col-span-2 row-span-2">
+                    <img src="https://placehold.co/800x800/8D6E63/2C1810?text=Pour+Over" 
+                         alt="Barista performing pour over technique" 
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="img-overlay rounded-sm overflow-hidden shadow-layered">
+                    <img src="https://placehold.co/400x400/8D6E63/2C1810?text=Latte+Art" 
+                         alt="Beautiful latte art close-up" 
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="img-overlay rounded-sm overflow-hidden shadow-layered">
+                    <img src="https://placehold.co/400x400/8D6E63/2C1810?text=Pastries" 
+                         alt="Fresh pastries display" 
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="img-overlay rounded-sm overflow-hidden shadow-layered">
+                    <img src="https://placehold.co/400x400/8D6E63/2C1810?text=Beans" 
+                         alt="Coffee beans close-up" 
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="img-overlay rounded-sm overflow-hidden shadow-layered">
+                    <img src="https://placehold.co/400x400/8D6E63/2C1810?text=Community" 
+                         alt="Customers enjoying coffee together" 
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="img-overlay rounded-sm overflow-hidden shadow-layered">
+                    <img src="https://placehold.co/400x400/8D6E63/2C1810?text=Roasting" 
+                         alt="Coffee roasting process" 
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-24 gradient-warm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-5xl md:text-6xl mb-8">Visit Us</h2>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Location</h3>
+                            <p class="text-lg" style="color: var(--coffee-medium);">
+                                412 Black Street<br>
+                                Downtown District<br>
+                                City, State 12345
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Hours</h3>
+                            <p class="text-lg" style="color: var(--coffee-medium);">
+                                Monday - Friday: 6:00 AM - 8:00 PM<br>
+                                Saturday - Sunday: 7:00 AM - 8:00 PM
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Contact</h3>
+                            <p class="text-lg" style="color: var(--coffee-medium);">
+                                Phone: (555) 412-4120<br>
+                                Email: hello@blk412coffee.com
+                            </p>
+                        </div>
+
+                        <a href="#contact" class="btn btn-primary">Get Directions</a>
+                    </div>
+                </div>
+
+                <div class="rounded-sm overflow-hidden shadow-elevated">
+                    <img src="https://placehold.co/800x600/8D6E63/2C1810?text=Map+Location" 
+                         alt="Map showing BLK 412 location" 
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/CTA Section -->
+    <section id="contact" class="py-32 gradient-dark text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-5xl md:text-6xl mb-6" style="line-height: 1.1;">
+                Start Your Day<br>the Right Way
+            </h2>
+            <p class="text-xl md:text-2xl mb-12 opacity-90" style="font-weight: 300;">
+                Order ahead for pickup or join us in-store for the full experience
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#order" class="btn btn-primary">Order for Pickup</a>
+                <a href="#menu" class="btn btn-secondary" style="color: white; border-color: white;">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t-2 border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="logo.svg" alt="BLK 412 Logo" class="h-10 w-auto">
+                        <div class="flex flex-col leading-none">
+                            <span class="text-2xl font-bold" style="font-family: 'Playfair Display', serif; letter-spacing: -0.02em; color: var(--coffee-dark);">BLK 412</span>
+                            <span class="text-xs uppercase tracking-widest" style="font-family: 'Outfit', sans-serif; font-weight: 500; color: var(--accent-gold); letter-spacing: 0.15em;">Coffee & Tea</span>
+                        </div>
+                    </div>
+                    <p class="text-lg" style="color: var(--coffee-medium);">
+                        Artisan coffee, premium tea, and community—crafted with care since 2019.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#menu" class="hover:underline" style="color: var(--coffee-medium);">Menu</a></li>
+                        <li><a href="#about" class="hover:underline" style="color: var(--coffee-medium);">About Us</a></li>
+                        <li><a href="#location" class="hover:underline" style="color: var(--coffee-medium);">Location</a></li>
+                        <li><a href="#contact" class="hover:underline" style="color: var(--coffee-medium);">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline" style="color: var(--coffee-medium);">Instagram</a></li>
+                        <li><a href="#" class="hover:underline" style="color: var(--coffee-medium);">Facebook</a></li>
+                        <li><a href="#" class="hover:underline" style="color: var(--coffee-medium);">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-200 text-center">
+                <p style="color: var(--coffee-medium);">
+                    &copy; 2026 BLK 412 Coffee Shop. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu tab switching
+        function showMenu(menu) {
+            // Hide all menu contents
+            const menus = document.querySelectorAll('.menu-content');
+            menus.forEach(m => m.classList.add('hidden'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.menu-tab');
+            tabs.forEach(t => t.classList.remove('active'));
+            
+            // Show selected menu
+            document.getElementById(`menu-${menu}`).classList.remove('hidden');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80; // Account for fixed nav
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.animate-fadeInUp, .animate-fadeIn, .animate-scaleIn').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

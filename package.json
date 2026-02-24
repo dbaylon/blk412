@@ -1,0 +1,16 @@
+{
+  "name": "blk412-coffee-tea",
+  "version": "1.0.0",
+  "description": "BLK 412 Coffee & Tea - Modern landing page",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11"
+  }
+}

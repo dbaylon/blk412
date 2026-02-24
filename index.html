@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLK 412 Coffee & Tea - Artisan Coffee, Tea & Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-layered">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="/logo.svg" alt="BLK 412 Coffee & Tea Logo" class="h-12 w-auto">
+                <div class="flex flex-col leading-none">
+                    <span class="text-2xl font-bold" style="font-family: 'Playfair Display', serif; letter-spacing: -0.02em; color: var(--coffee-dark);">BLK 412</span>
+                    <span class="text-xs uppercase tracking-widest" style="font-family: 'Outfit', sans-serif; font-weight: 500; color: var(--accent-gold); letter-spacing: 0.15em;">Coffee & Tea</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-1">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#location" class="nav-link">Location</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <a href="#contact" class="btn btn-primary">Order Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20" style="background: linear-gradient(135deg, #4A3428 0%, #5D4037 50%, #4A3428 100%);">
+        <div class="absolute inset-0" style="background: radial-gradient(circle at 30% 40%, rgba(141, 110, 99, 0.15) 0%, transparent 60%); pointer-events: none;"></div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <div class="relative">
+                <h1 class="text-6xl md:text-7xl lg:text-8xl absolute inset-0 flex items-center justify-center" style="line-height: 1.1; color: rgba(141, 110, 99, 0.15); font-weight: 900; letter-spacing: -0.02em; white-space: nowrap;">
+                    Artisan Coffee Experience
+                </h1>
+                <h1 class="text-6xl md:text-7xl lg:text-8xl text-white mb-6 animate-fadeInUp relative" style="line-height: 1.1;">
+                    Where Craft<br>Meets Community
+                </h1>
+            </div>
+            <p class="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto animate-fadeInUp delay-200" style="font-weight: 300;">
+                Experience artisan coffee & premium tea roasted in-house, paired with handcrafted pastries in the heart of the city
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fadeInUp delay-400">
+                <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                <a href="#about" class="btn btn-secondary" style="color: white; border-color: white;">Our Story</a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-fadeIn delay-600">
+            <div class="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
+                <div class="w-1 h-3 bg-white/70 rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-24 gradient-warm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center animate-scaleIn delay-100">
+                    <div class="feature-icon mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Roasted & Sourced In-House</h3>
+                    <p class="text-lg" style="color: var(--coffee-medium);">
+                        Single-origin coffee beans and premium tea leaves sourced and roasted fresh daily in small batches
+                    </p>
+                </div>
+
+                <div class="text-center animate-scaleIn delay-300">
+                    <div class="feature-icon mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Community Hub</h3>
+                    <p class="text-lg" style="color: var(--coffee-medium);">
+                        A welcoming space for connection, creativity, and meaningful conversation
+                    </p>
+                </div>
+
+                <div class="text-center animate-scaleIn delay-500">
+                    <div class="feature-icon mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">Open Early & Late</h3>
+                    <p class="text-lg" style="color: var(--coffee-medium);">
+                        6am to 8pm daily - from your morning brew to evening wind-down
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-fadeInUp">
+                    <div class="rounded-sm overflow-hidden shadow-elevated" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 500px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 3rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Interior</span>
+                    </div>
+                </div>
+
+                <div class="animate-fadeInUp delay-200">
+                    <h2 class="text-5xl md:text-6xl mb-6" style="line-height: 1.1;">
+                        Crafted with<br>Purpose & Passion
+                    </h2>
+                    <div class="space-y-6 text-lg" style="color: var(--coffee-medium);">
+                        <p>
+                            BLK 412 was born from a simple belief: coffee and tea are more than beverages—they're rituals, 
+                            moments of pause, and catalysts for connection.
+                        </p>
+                        <p>
+                            Since 2019, we've been sourcing the finest single-origin coffee beans and premium tea leaves from sustainable farms, 
+                            roasting and preparing them in small batches, and serving them alongside handcrafted pastries made 
+                            fresh each morning.
+                        </p>
+                        <p>
+                            Our baristas are trained in the art of espresso extraction, pour-over technique, 
+                            and latte art. Every cup is crafted with intention and care.
+                        </p>
+                        <p style="color: var(--coffee-dark); font-weight: 500;">
+                            This is more than a coffee shop—it's a gathering place where creativity flows 
+                            and community thrives.
+                        </p>
+                    </div>
+                    <a href="#menu" class="btn btn-primary mt-8">Discover Our Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 gradient-warm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl mb-6">Signature Menu</h2>
+                <p class="text-xl max-w-2xl mx-auto" style="color: var(--coffee-medium);">
+                    Thoughtfully curated beverages and bites, crafted to perfection
+                </p>
+            </div>
+
+            <div class="flex justify-center mb-12 border-b-2 border-gray-200">
+                <button class="menu-tab active" data-menu="espresso">Espresso</button>
+                <button class="menu-tab" data-menu="tea">Tea</button>
+                <button class="menu-tab" data-menu="brewed">Brewed</button>
+                <button class="menu-tab" data-menu="seasonal">Seasonal</button>
+                <button class="menu-tab" data-menu="food">Food</button>
+            </div>
+
+            <!-- Espresso Menu -->
+            <div id="menu-espresso" class="menu-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Espresso</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Classic Espresso</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Double shot, rich and balanced with notes of dark chocolate
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$3.50</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Cappuccino</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Cappuccino</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Velvety microfoam meets espresso in perfect harmony
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.50</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Cortado</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Cortado</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Equal parts espresso and steamed milk, bold yet smooth
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.25</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Flat White</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Flat White</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Ristretto shots with silky microfoam, Australian-style
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.75</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Latte</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Signature Latte</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Creamy whole milk latte with intricate latte art
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$5.00</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Macchiato</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Macchiato</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Espresso "marked" with a dollop of foamed milk
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$3.75</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tea Menu -->
+            <div id="menu-tea" class="menu-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Matcha</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Ceremonial Matcha</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Stone-ground Japanese matcha, whisked to perfection
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$5.50</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">London Fog</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">London Fog</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Earl Grey tea with vanilla, lavender, and steamed milk
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.75</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Chai</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Masala Chai</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        House-blend spiced chai with creamy steamed milk
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.50</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Oolong</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Iron Goddess Oolong</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Premium Tie Guan Yin with floral and honey notes
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.25</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Jasmine</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Jasmine Pearl</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Hand-rolled green tea pearls scented with jasmine flowers
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.00</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Chamomile</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Chamomile Dream</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Calming chamomile, lavender, and honey blend
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$3.75</span>
+                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other menu sections -->
+            <div id="menu-brewed" class="menu-content hidden">
+                <p class="text-center text-xl" style="color: var(--coffee-medium);">Brewed coffee menu coming soon...</p>
+            </div>
+            <div id="menu-seasonal" class="menu-content hidden">
+                <p class="text-center text-xl" style="color: var(--coffee-medium);">Seasonal specials menu coming soon...</p>
+            </div>
+            <div id="menu-food" class="menu-content hidden">
+                <p class="text-center text-xl" style="color: var(--coffee-medium);">Food menu coming soon...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl mb-6">The Experience</h2>
+                <p class="text-xl max-w-2xl mx-auto" style="color: var(--coffee-medium);">
+                    A glimpse into our daily rituals and community moments
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="rounded-sm overflow-hidden shadow-layered col-span-2 row-span-2" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 400px; display: flex; align-items: center; justify-content: center;">
+                    <span style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Pour Over</span>
+                </div>
+                <div class="rounded-sm overflow-hidden shadow-layered" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 195px; display: flex; align-items: center; justify-content: center;">
+                    <span style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Latte Art</span>
+                </div>
+                <div class="rounded-sm overflow-hidden shadow-layered" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 195px; display: flex; align-items: center; justify-content: center;">
+                    <span style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Pastries</span>
+                </div>
+                <div class="rounded-sm overflow-hidden shadow-layered" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 195px; display: flex; align-items: center; justify-content: center;">
+                    <span style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Beans</span>
+                </div>
+                <div class="rounded-sm overflow-hidden shadow-layered" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 195px; display: flex; align-items: center; justify-content: center;">
+                    <span style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Community</span>
+                </div>
+                <div class="rounded-sm overflow-hidden shadow-layered" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 195px; display: flex; align-items: center; justify-content: center;">
+                    <span style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Roasting</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-24 gradient-warm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-5xl md:text-6xl mb-8">Visit Us</h2>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Location</h3>
+                            <p class="text-lg" style="color: var(--coffee-medium);">
+                                412 Black Street<br>
+                                Downtown District<br>
+                                City, State 12345
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Hours</h3>
+                            <p class="text-lg" style="color: var(--coffee-medium);">
+                                Monday - Friday: 6:00 AM - 8:00 PM<br>
+                                Saturday - Sunday: 7:00 AM - 8:00 PM
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Contact</h3>
+                            <p class="text-lg" style="color: var(--coffee-medium);">
+                                Phone: (555) 412-4120<br>
+                                Email: hello@blk412coffee.com
+                            </p>
+                        </div>
+
+                        <a href="#contact" class="btn btn-primary">Get Directions</a>
+                    </div>
+                </div>
+
+                <div class="rounded-sm overflow-hidden shadow-elevated" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 450px; display: flex; align-items: center; justify-content: center;">
+                    <span style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Map</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/CTA Section -->
+    <section id="contact" class="py-32 gradient-dark text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-5xl md:text-6xl mb-6" style="line-height: 1.1;">
+                Start Your Day<br>the Right Way
+            </h2>
+            <p class="text-xl md:text-2xl mb-12 opacity-90" style="font-weight: 300;">
+                Order ahead for pickup or join us in-store for the full experience
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#order" class="btn btn-primary">Order for Pickup</a>
+                <a href="#menu" class="btn btn-secondary" style="color: white; border-color: white;">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t-2 border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="/logo.svg" alt="BLK 412 Logo" class="h-10 w-auto">
+                        <div class="flex flex-col leading-none">
+                            <span class="text-2xl font-bold" style="font-family: 'Playfair Display', serif; letter-spacing: -0.02em; color: var(--coffee-dark);">BLK 412</span>
+                            <span class="text-xs uppercase tracking-widest" style="font-family: 'Outfit', sans-serif; font-weight: 500; color: var(--accent-gold); letter-spacing: 0.15em;">Coffee & Tea</span>
+                        </div>
+                    </div>
+                    <p class="text-lg" style="color: var(--coffee-medium);">
+                        Artisan coffee, premium tea, and community—crafted with care since 2019.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#menu" class="hover:underline" style="color: var(--coffee-medium);">Menu</a></li>
+                        <li><a href="#about" class="hover:underline" style="color: var(--coffee-medium);">About Us</a></li>
+                        <li><a href="#location" class="hover:underline" style="color: var(--coffee-medium);">Location</a></li>
+                        <li><a href="#contact" class="hover:underline" style="color: var(--coffee-medium);">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline" style="color: var(--coffee-medium);">Instagram</a></li>
+                        <li><a href="#" class="hover:underline" style="color: var(--coffee-medium);">Facebook</a></li>
+                        <li><a href="#" class="hover:underline" style="color: var(--coffee-medium);">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-200 text-center">
+                <p style="color: var(--coffee-medium);">
+                    &copy; 2026 BLK 412 Coffee Shop. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
