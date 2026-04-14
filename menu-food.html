@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu - BLK 412</title>
+    <link rel="icon" type="image/svg+xml" href="/logo.svg?v=8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #f5f5f0;
+            padding: 2rem;
+            color: #1a1a1a;
+        }
+        .menu-layout {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 380px 1fr 320px;
+            gap: 2rem;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .hero-image-box {
+            position: relative;
+            height: 100%;
+            min-height: 700px;
+        }
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.95);
+        }
+        .middle-content {
+            padding: 2.5rem 2rem;
+        }
+        .section-box {
+            background: white;
+            padding: 0;
+            margin-bottom: 2.5rem;
+            border: 1px solid #e8e4df;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .section-title {
+            background: #3e2723;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.75rem 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            text-align: left;
+        }
+        .table-content {
+            padding: 1.5rem;
+            background: #fafaf8;
+        }
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1rem;
+            font-size: 0.8rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #e8e4df;
+            align-items: center;
+        }
+        .table-row:last-child {
+            border: none;
+        }
+        .item-text {
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #3e2723;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+        }
+        .price-text {
+            text-align: right;
+            font-weight: 700;
+            color: #1a1a1a;
+            font-size: 0.85rem;
+        }
+        .sub-text {
+            font-size: 0.72rem;
+            text-transform: none;
+            font-style: italic;
+            color: #6d4c41;
+            font-weight: 400;
+        }
+        .right-sidebar {
+            background: #3e2723;
+            padding: 2.5rem 2rem;
+        }
+        .brand-box {
+            background: transparent;
+            border: none;
+            padding: 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .brand-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #f5f5f0;
+            letter-spacing: 0.35em;
+            line-height: 1;
+            margin-left: 0.35em;
+        }
+        .brand-sub {
+            color: #d4c5b9;
+            font-size: 1rem;
+            letter-spacing: 0.35em;
+            margin-top: 0.6rem;
+            margin-left: 0.35em;
+            font-weight: 300;
+        }
+        .side-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            border: 2px solid #d4c5b9;
+        }
+        .nav-buttons {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .nav-btn {
+            display: block;
+            width: 100%;
+            background: #f5f5f0;
+            color: #3e2723;
+            padding: 0.85rem 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: all 0.3s ease;
+            border: 1px solid #d4c5b9;
+        }
+        .nav-btn:hover {
+            background: #d4c5b9;
+            transform: translateY(-1px);
+        }
+        .nav-btn.primary {
+            background: #d4c5b9;
+        }
+        @media (max-width: 1100px) {
+            .menu-layout {
+                grid-template-columns: 1fr;
+            }
+            .hero-image-box {
+                min-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-layout">
+        <!-- LEFT: Hero Image -->
+        <div class="hero-image-box">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=85&auto=format&fit=crop" alt="Filipino Breakfast" class="hero-img">
+        </div>
+
+        <!-- MIDDLE: Menu Sections -->
+        <div class="middle-content">
+            <!-- SIDE ORDER -->
+            <div class="section-box">
+                <div class="section-title">SIDE ORDER</div>
+                <div class="table-content">
+                <div class="table-row">
+                    <div class="item-text">SPAGHETTI</div>
+                    <div class="price-text">₱140.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">CARBONARA</div>
+                    <div class="price-text">₱145.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">TUNA PASTA</div>
+                    <div class="price-text">₱150.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">FRENCH FRIES <span class="sub-text">(Solo)</span></div>
+                    <div class="price-text">₱80.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">FRENCH FRIES <span class="sub-text">(Barkada)</span></div>
+                    <div class="price-text">₱160.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">NACHOS <span class="sub-text">(Solo)</span></div>
+                    <div class="price-text">₱80.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">NACHOS <span class="sub-text">(Barkada)</span></div>
+                    <div class="price-text">₱150.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">MUFFINS</div>
+                    <div class="price-text">₱80.00</div>
+                </div>
+                </div>
+            </div>
+
+            <!-- RICE MEAL -->
+            <div class="section-box">
+                <div class="section-title">RICE MEAL WITH EGG</div>
+                <div class="table-content">
+                <div class="table-row">
+                    <div class="item-text">TAPA</div>
+                    <div class="price-text">₱130.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">CORNBEEF</div>
+                    <div class="price-text">₱120.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">BACON</div>
+                    <div class="price-text">₱150.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">LONGANISA</div>
+                    <div class="price-text">₱110.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">HOTDOG</div>
+                    <div class="price-text">₱120.00</div>
+                </div>
+                </div>
+            </div>
+
+            <!-- CROISSANTS -->
+            <div class="section-box">
+                <div class="section-title">CROISSANTS <span class="sub-text">(Pre-order - 3 pcs)</span></div>
+                <div class="table-content">
+                <div class="table-row">
+                    <div class="item-text">MINI CROISSANT</div>
+                    <div class="price-text">₱110.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">BIG CROISSANT</div>
+                    <div class="price-text">₱180.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">BIG CROISSANT <span class="sub-text">(Ham & Cheese)</span></div>
+                    <div class="price-text">₱240.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">BIG CROISSANT <span class="sub-text">(Tuna TLC)</span></div>
+                    <div class="price-text">₱250.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">BIG CROISSANT <span class="sub-text">(Egg Mayo)</span></div>
+                    <div class="price-text">₱250.00</div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Brand + Add-ons + Image -->
+        <div class="right-sidebar">
+            <div class="brand-box">
+                <img src="/resources/logo.png" alt="BLK 412 Coffee & Tea" style="width: 100%; max-width: 280px; height: auto; display: block; margin: 0 auto;">
+            </div>
+
+            <!-- ADD-ONS -->
+            <div class="section-box">
+                <div class="section-title">ADD-ONS</div>
+                <div class="table-content">
+                <div class="table-row">
+                    <div class="item-text">PEARL</div>
+                    <div class="price-text">₱15.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">ADD EGG</div>
+                    <div class="price-text">₱15.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">EXTRA RICE</div>
+                    <div class="price-text">₱20.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">MINERAL WATER</div>
+                    <div class="price-text">₱15.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">KOKO CRUNCH</div>
+                    <div class="price-text">₱15.00</div>
+                </div>
+                <div class="table-row">
+                    <div class="item-text">ESPRESSO SHOT</div>
+                    <div class="price-text">₱40.00</div>
+                </div>
+                </div>
+            </div>
+
+            <img src="/resources/store/general.jpeg" alt="BLK 412 Drinks" class="side-image">
+        </div>
+    </div>
+</body>
+</html>

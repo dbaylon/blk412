@@ -158,26 +158,48 @@
             </div>
 
             <div class="flex justify-center mb-12 border-b-2 border-gray-200">
-                <button class="menu-tab active" data-menu="espresso">Espresso</button>
-                <button class="menu-tab" data-menu="tea">Tea</button>
-                <button class="menu-tab" data-menu="brewed">Brewed</button>
-                <button class="menu-tab" data-menu="seasonal">Seasonal</button>
+                <button class="menu-tab active" data-menu="caffeinated">Caffeinated</button>
+                <button class="menu-tab" data-menu="noncaffeinated">Non-Caffeinated</button>
+                <button class="menu-tab" data-menu="frappe">Frappe</button>
                 <button class="menu-tab" data-menu="food">Food</button>
+                <button class="menu-tab" data-menu="croissants">Croissants</button>
             </div>
 
-            <!-- Espresso Menu -->
-            <div id="menu-espresso" class="menu-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Caffeinated Menu -->
+            <div id="menu-caffeinated" class="menu-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="card bg-white rounded-sm p-8 shadow-layered">
                     <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
-                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Espresso</span>
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Americano</span>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-2">Classic Espresso</h3>
+                    <h3 class="text-2xl font-semibold mb-2">Americano</h3>
                     <p class="text-lg mb-4" style="color: var(--coffee-medium);">
-                        Double shot, rich and balanced with notes of dark chocolate
+                        Bold espresso diluted with hot water for a smooth finish
                     </p>
                     <div class="flex items-center justify-between">
-                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$3.50</span>
-                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">8oz: ₱80</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">12oz: ₱90</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱105</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">22oz: ₱115</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Latte</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Latte</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Smooth espresso with creamy steamed milk
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">8oz: ₱110</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">12oz: ₱120</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱125</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">22oz: ₱135</span>
+                        </div>
                     </div>
                 </div>
 
@@ -187,53 +209,15 @@
                     </div>
                     <h3 class="text-2xl font-semibold mb-2">Cappuccino</h3>
                     <p class="text-lg mb-4" style="color: var(--coffee-medium);">
-                        Velvety microfoam meets espresso in perfect harmony
+                        Perfect balance of espresso, steamed milk, and foam
                     </p>
                     <div class="flex items-center justify-between">
-                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.50</span>
-                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
-                    </div>
-                </div>
-
-                <div class="card bg-white rounded-sm p-8 shadow-layered">
-                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
-                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Cortado</span>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-2">Cortado</h3>
-                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
-                        Equal parts espresso and steamed milk, bold yet smooth
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.25</span>
-                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
-                    </div>
-                </div>
-
-                <div class="card bg-white rounded-sm p-8 shadow-layered">
-                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
-                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Flat White</span>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-2">Flat White</h3>
-                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
-                        Ristretto shots with silky microfoam, Australian-style
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.75</span>
-                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
-                    </div>
-                </div>
-
-                <div class="card bg-white rounded-sm p-8 shadow-layered">
-                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
-                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Latte</span>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-2">Signature Latte</h3>
-                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
-                        Creamy whole milk latte with intricate latte art
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$5.00</span>
-                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">8oz: ₱110</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">12oz: ₱120</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱130</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">22oz: ₱140</span>
+                        </div>
                     </div>
                 </div>
 
@@ -243,111 +227,553 @@
                     </div>
                     <h3 class="text-2xl font-semibold mb-2">Macchiato</h3>
                     <p class="text-lg mb-4" style="color: var(--coffee-medium);">
-                        Espresso "marked" with a dollop of foamed milk
+                        Espresso marked with a dollop of foamed milk
                     </p>
                     <div class="flex items-center justify-between">
-                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$3.75</span>
-                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">8oz: ₱110</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">12oz: ₱120</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱130</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">22oz: ₱140</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Sea Salt</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Sea Salt Latte</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Salted cream foam over smooth latte
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱135</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">22oz: ₱145</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">White Mocha</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">White Mocha</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Espresso with white chocolate and steamed milk
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">8oz: ₱115</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">12oz: ₱125</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱135</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">22oz: ₱145</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Caramel</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Caramel</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Sweet caramel sauce with espresso and milk
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">8oz: ₱115</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">12oz: ₱125</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱135</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">22oz: ₱145</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Brewed</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Brewed Coffee</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Freshly brewed filter coffee
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">8oz: ₱60</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">12oz: ₱75</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱95</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">22oz: ₱105</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Double Chips</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Double Chips Chips</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Double chocolate chips blend
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱135</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">22oz: ₱145</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Java Chips</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Java Chips</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Coffee with chocolate chips
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱135</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">22oz: ₱145</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Tea Menu -->
-            <div id="menu-tea" class="menu-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Non-Caffeinated Menu -->
+            <div id="menu-noncaffeinated" class="menu-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="card bg-white rounded-sm p-8 shadow-layered">
                     <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
-                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Matcha</span>
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Matcha Latte</span>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-2">Ceremonial Matcha</h3>
+                    <h3 class="text-2xl font-semibold mb-2">Matcha Latte</h3>
                     <p class="text-lg mb-4" style="color: var(--coffee-medium);">
-                        Stone-ground Japanese matcha, whisked to perfection
+                        Premium matcha with creamy steamed milk
                     </p>
                     <div class="flex items-center justify-between">
-                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$5.50</span>
-                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">8oz: ₱95</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">12oz: ₱105</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱120</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">22oz: ₱130</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="card bg-white rounded-sm p-8 shadow-layered">
                     <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
-                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">London Fog</span>
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Chocolate</span>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-2">London Fog</h3>
+                    <h3 class="text-2xl font-semibold mb-2">Chocolate</h3>
                     <p class="text-lg mb-4" style="color: var(--coffee-medium);">
-                        Earl Grey tea with vanilla, lavender, and steamed milk
+                        Rich chocolate with steamed milk
                     </p>
                     <div class="flex items-center justify-between">
-                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.75</span>
-                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">8oz: ₱90</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">12oz: ₱105</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱120</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">22oz: ₱130</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="card bg-white rounded-sm p-8 shadow-layered">
                     <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
-                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Chai</span>
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Iced Baby Tea</span>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-2">Masala Chai</h3>
+                    <h3 class="text-2xl font-semibold mb-2">Honey Pina Azur / Iced Baby Tea</h3>
                     <p class="text-lg mb-4" style="color: var(--coffee-medium);">
-                        House-blend spiced chai with creamy steamed milk
+                        Refreshing fruit tea blend
                     </p>
                     <div class="flex items-center justify-between">
-                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.50</span>
-                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
-                    </div>
-                </div>
-
-                <div class="card bg-white rounded-sm p-8 shadow-layered">
-                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
-                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Oolong</span>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-2">Iron Goddess Oolong</h3>
-                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
-                        Premium Tie Guan Yin with floral and honey notes
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.25</span>
-                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
-                    </div>
-                </div>
-
-                <div class="card bg-white rounded-sm p-8 shadow-layered">
-                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
-                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Jasmine</span>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-2">Jasmine Pearl</h3>
-                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
-                        Hand-rolled green tea pearls scented with jasmine flowers
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$4.00</span>
-                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
-                    </div>
-                </div>
-
-                <div class="card bg-white rounded-sm p-8 shadow-layered">
-                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
-                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Chamomile</span>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-2">Chamomile Dream</h3>
-                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
-                        Calming chamomile, lavender, and honey blend
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">$3.75</span>
-                        <button class="text-sm font-medium uppercase tracking-wider hover:underline" style="color: var(--coffee-dark);">Add to Order</button>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱125</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">22oz: ₱130</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Other menu sections -->
-            <div id="menu-brewed" class="menu-content hidden">
-                <p class="text-center text-xl" style="color: var(--coffee-medium);">Brewed coffee menu coming soon...</p>
+            <!-- Frappe Menu -->
+            <div id="menu-frappe" class="menu-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Caramel</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Caramel Frappe</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Blended caramel coffee with ice and cream
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">Base: ₱125</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱220</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Java Chips</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Java Chips Frappe</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Coffee blended with chocolate chips
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">Base: ₱125</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱135</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Chocolate</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Chocolate Chips Frappe</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Rich chocolate blended with chips
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">Base: ₱125</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱135</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">White Mocha</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">White Mocha Frappe</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        White chocolate blended with coffee
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">Base: ₱125</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱135</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Milo</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Milo Dinosaur Frappe</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Milo chocolate blended drink
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">Base: ₱125</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱135</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Cookies</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Cookies N Cream Frappe</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Oreo cookies blended with cream
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">Base: ₱125</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱135</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">White Matcha</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">White Matcha Frappe</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Matcha blended with white chocolate
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">Base: ₱125</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱125</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Strawberry</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Strawberry Matcha Frappe</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Strawberry and matcha blend
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">Base: ₱125</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">16oz: ₱135</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="menu-seasonal" class="menu-content hidden">
-                <p class="text-center text-xl" style="color: var(--coffee-medium);">Seasonal specials menu coming soon...</p>
+
+            <!-- Food Menu -->
+            <div id="menu-food" class="menu-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Spaghetti</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Spaghetti</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Classic pasta with tomato sauce
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">₱140</span>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Carbonara</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Carbonara</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Creamy pasta with bacon
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">₱145</span>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Tuna</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Tuna Pasta</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Pasta with tuna and herbs
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">₱150</span>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Fries</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">French Fries</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Crispy golden fries
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">Solo: ₱80</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">Parkada: ₱160</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Nachos</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Nachos</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Crispy tortilla chips with toppings
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">Solo: ₱80</span>
+                            <span class="text-sm font-medium px-3 py-1 bg-gray-100 rounded">Parkada: ₱150</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Muffins</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Muffins</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Freshly baked muffins
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">₱60</span>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Tapa</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Tapa Rice Meal</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Filipino beef tapa with rice and egg
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">₱130</span>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Longanisa</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Longanisa Rice Meal</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Filipino sausage with rice and egg
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">₱110</span>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Cornbeef</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Cornbeef Rice Meal</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Corned beef with rice and egg
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">₱120</span>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Bacon</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Bacon Rice Meal</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Crispy bacon with rice and egg
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">₱150</span>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Hotdog</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Hotdog Rice Meal</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        Hotdog with rice and egg
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">₱120</span>
+                    </div>
+                </div>
             </div>
-            <div id="menu-food" class="menu-content hidden">
-                <p class="text-center text-xl" style="color: var(--coffee-medium);">Food menu coming soon...</p>
+
+            <!-- Croissants Menu -->
+            <div id="menu-croissants" class="menu-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Mini</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Mini Croissant</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        3 pieces of mini croissants (Pre-order)
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">₱110</span>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Big</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Big Croissant</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        3 pieces of large croissants (Pre-order)
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">₱180</span>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Ham & Cheese</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Ham & Cheese Croissant</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        3 pieces filled with ham and cheese (Pre-order)
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">₱240</span>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Tuna TLC</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Tuna TLC Croissant</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        3 pieces with tuna filling (Pre-order)
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">₱250</span>
+                    </div>
+                </div>
+
+                <div class="card bg-white rounded-sm p-8 shadow-layered">
+                    <div class="rounded-sm overflow-hidden mb-6" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); height: 192px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(44, 24, 16, 0.3); font-weight: 700;">Egg Mayo</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Egg Mayo Croissant</h3>
+                    <p class="text-lg mb-4" style="color: var(--coffee-medium);">
+                        3 pieces with egg and mayo (Pre-order)
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-semibold" style="color: var(--accent-gold);">₱250</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add-ons & Extras -->
+            <div class="mt-16 border-t-2 border-gray-200 pt-12">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-semibold mb-4">Add-ons & Extras</h3>
+                    <p class="text-lg" style="color: var(--coffee-medium);">
+                        Customize your order with these add-ons
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div class="text-center p-6 bg-white rounded-sm shadow-layered">
+                        <h4 class="text-xl font-semibold mb-2">Add Egg</h4>
+                        <p class="text-2xl font-semibold" style="color: var(--accent-gold);">₱15</p>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-sm shadow-layered">
+                        <h4 class="text-xl font-semibold mb-2">Extra Rice</h4>
+                        <p class="text-2xl font-semibold" style="color: var(--accent-gold);">₱20</p>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-sm shadow-layered">
+                        <h4 class="text-xl font-semibold mb-2">Mineral Water</h4>
+                        <p class="text-2xl font-semibold" style="color: var(--accent-gold);">₱15</p>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-sm shadow-layered">
+                        <h4 class="text-xl font-semibold mb-2">Espresso Shot</h4>
+                        <p class="text-2xl font-semibold" style="color: var(--accent-gold);">₱40</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

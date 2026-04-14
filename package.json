@@ -4,6 +4,7 @@
   "description": "BLK 412 Coffee & Tea - Modern landing page",
   "type": "module",
   "scripts": {
+    "port": "3001",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
